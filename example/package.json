@@ -1,0 +1,16 @@
+{
+    "name": "example",
+    "version": "1.0.0",
+    "description": "example use the crawl-to-markdown package",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo 'example testing a customized npm package on local'",
+        "start": "node src/index.js"
+    },
+    "author": "Le Ngoc Duy",
+    "license": "MIT",
+    "dependencies": {
+        "crawl-to-markdown": "file:.."
+    },
+    "type": "module"
+}

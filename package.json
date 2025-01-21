@@ -1,0 +1,79 @@
+{
+    "name": "crawl-to-markdown",
+    "description": "Crawl-to-markdown is a powerful TypeScript package designed to search search engines for a given keyword, crawl the resulting websites, and deliver the content in clean, readable Markdown format. Additionally, it can directly crawl specified websites for content extraction. Ideal for developers, content creators, and SEO specialists, this tool simplifies the process of gathering web content for documentation, analysis, or blog generation. With built-in support for structured data extraction and content formatting, crawl-to-markdown streamlines the conversion of web pages into markdown with minimal setup.",
+    "version": "1.0.0",
+    "author": "Ahmed oubadi",
+    "bugs": "https://github.com/ahmedoubadi/crawl-to-markdown/issues",
+    "devDependencies": {
+        "@tsconfig/node18": "^18.2.2",
+        "@types/jest": "^29.5.11",
+        "@typescript-eslint/eslint-plugin": "^6.20.0",
+        "eslint": "^8.56.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-prettier": "^5.1.3",
+        "http-server": "^14.1.1",
+        "husky": "^9.0.10",
+        "jest": "^29.7.0",
+        "lint-staged": "^15.2.1",
+        "node-notifier": "^10.0.1",
+        "prettier": "3.2.4",
+        "rimraf": "^5.0.5",
+        "syncpack": "^13.0.0",
+        "ts-jest": "^29.1.2",
+        "ts-node": "^10.9.2",
+        "tsup": "^8.0.1",
+        "typedoc": "^0.26.6",
+        "typescript": "^5.3.3"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "files": [
+        "dist"
+    ],
+    "homepage": "https://github.com/ahmedoubadi/crawl-to-markdown#readme",
+    "keywords": [
+        "web-crawling",
+        "npm-typescript",
+        "markdown-conversion",
+        "search-engine-scraping",
+        "website-scraper",
+        "typescript-crawler",
+        "content-extraction",
+        "web-content-to-markdown",
+        "data-scraping",
+        "seo-content-tool",
+        "web-scraping-markdown",
+        "keyword-search-crawler"
+    ],
+    "license": "MIT",
+    "lint-staged": {
+        "**/*": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\" \"config/**/*\" --config config/.prettierrc --ignore-unknown"
+    },
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "repository": "ahmedoubadi/crawl-to-markdown.git",
+    "scripts": {
+        "build": "tsup --config ./config/tsup.config.ts",
+        "docs:build": "typedoc --options ./config/typedoc.json",
+        "docs:serve": "npm run docs:build && http-server ./docs --cors -p 8080 -c-1",
+        "lint": "eslint \"{src,tests}/**/*.ts\" --config ./config/.eslintrc.cjs",
+        "lint:fix": "npm run lint -- --fix",
+        "prebuild": "rimraf dist",
+        "prepare": "husky install",
+        "pretest": "rimraf coverage",
+        "prettier:format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\" \"config/**/*\" --config config/.prettierrc",
+        "start": "npm run build && node dist/index.js",
+        "start:watch": "tsup src/index.ts --config ./config/tsup.config.ts --watch --onSuccess 'node dist/index.js'",
+        "syncpack:check": "yarn syncpack list-mismatches --config ./config/.syncpackrc",
+        "syncpack:fix": "yarn syncpack fix-mismatches --config ./config/.syncpackrc",
+        "syncpack:format": "yarn syncpack format --config ./config/.syncpackrc",
+        "test": "jest --config ./config/jest.config.ts"
+    },
+    "type": "module",
+    "types": "./dist/index.d.ts",
+    "dependencies": {
+        "puppeteer": "^23.4.1"
+    }
+}
