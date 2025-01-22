@@ -60,7 +60,7 @@ export class MarkdownCrawler {
                     return true;
                 } catch (e) {
                     console.error(
-                        'Browser DO: Could not start browser instance. Error: ${e}',
+                        `Browser DO: Could not start browser instance. Error: ${e}`,
                     );
                     retries--;
                     if (!retries) {
@@ -68,7 +68,7 @@ export class MarkdownCrawler {
                     }
 
                     console.log(
-                        'Retrying to start browser instance. Retries left: ${retries}',
+                        `Retrying to start browser instance. Retries left: ${retries}`,
                     );
                 }
             } else {
@@ -229,20 +229,23 @@ export class MarkdownCrawler {
                     /*if (!(documentWithoutScripts instanceof Element)) {
                         throw new Error('documentNode is not an Element');
                     }*/
-                    // @ts-ignore
                     documentWithoutScripts
+                        // @ts-expect-error
                         .querySelectorAll('script')
                         .forEach((browserItem: any) => browserItem.remove());
-                    // @ts-ignore
+
                     documentWithoutScripts
+                        // @ts-expect-error
                         .querySelectorAll('style')
                         .forEach((browserItem: any) => browserItem.remove());
-                    // @ts-ignore
+
                     documentWithoutScripts
+                        // @ts-expect-error
                         .querySelectorAll('iframe')
                         .forEach((browserItem: any) => browserItem.remove());
-                    // @ts-ignore
+
                     documentWithoutScripts
+                        // @ts-expect-error
                         .querySelectorAll('noscript')
                         .forEach((browserItem: any) => browserItem.remove());
 
