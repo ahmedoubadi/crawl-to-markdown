@@ -51,8 +51,12 @@
     "lint-staged": {
         "**/*": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\" \"config/**/*\" --config config/.prettierrc --ignore-unknown"
     },
-    "main": "./dist/index.js",
-    "module": "./dist/index.mjs",
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "exports": {
+        "require": "./dist/index.cjs",
+        "import": "./dist/index.js"
+    },
     "repository": "ahmedoubadi/crawl-to-markdown.git",
     "scripts": {
         "build": "tsup --config ./config/tsup.config.ts",
