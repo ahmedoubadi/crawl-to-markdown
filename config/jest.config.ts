@@ -10,7 +10,7 @@ const config: Config = {
     bail: 1,
     testRegex: '.*\\.test\\.ts$',
     notify: true,
-    collectCoverage: true,
+    collectCoverage: false,
     coverageDirectory: './coverage',
     collectCoverageFrom: ['./src/*.{ts,js,jsx}'],
     coverageThreshold: {
