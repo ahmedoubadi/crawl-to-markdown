@@ -1,7 +1,7 @@
 {
     "name": "crawl-to-markdown",
     "description": "Crawl-to-markdown is a powerful TypeScript package designed to search search engines for a given keyword, crawl the resulting websites, and deliver the content in clean, readable Markdown format. Additionally, it can directly crawl specified websites for content extraction. Ideal for developers, content creators, and SEO specialists, this tool simplifies the process of gathering web content for documentation, analysis, or blog generation. With built-in support for structured data extraction and content formatting, crawl-to-markdown streamlines the conversion of web pages into markdown with minimal setup.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Ahmed oubadi",
     "bugs": "https://github.com/ahmedoubadi/crawl-to-markdown/issues",
     "devDependencies": {
